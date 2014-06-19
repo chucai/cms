@@ -1,13 +1,8 @@
 class CompaniesController < ApplicationController
-  # GET /companies
-  # GET /companies.json
+  layout 'admin'
+
   def index
     @companies = Company.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @companies }
-    end
   end
 
   # GET /companies/1
