@@ -19,13 +19,13 @@
     <td><%= company.email %></td>
     <td><%= company.address %></td>
     <td><%= company.logo %></td>
-    <td><%= link_to 'Show', company %></td>
-    <td><%= link_to 'Edit', edit_company_path(company) %></td>
-    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', [:admin, company] %></td>
+    <td><%= link_to 'Edit', edit_admin_company_path(company) %></td>
+    <td><%= link_to 'Destroy', [:admin, company], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Company', new_company_path %>
+<%= link_to 'New Company', new_admin_company_path %>
