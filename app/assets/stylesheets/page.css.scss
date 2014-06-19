@@ -1,0 +1,121 @@
+.section1 {
+	height: 551px;
+	background: url(img/work1/bg1.png) repeat-x 0 0;
+}
+.section1 .img1 {
+	height: 551px;
+	background: url(img/work1/p0.png) no-repeat center 0;
+}
+.section2 {
+	height: 550px;
+	background: url(img/work1/bg2.png) repeat-x 0 0;
+}
+.section3 {
+	height: 550px;
+	background: url(img/work1/bg3.png) repeat-x 0 0;
+}
+.section4 {
+	height: 550px;
+	background: url(img/work1/bg4.png) repeat-x 0 0;
+}
+.section {
+	position: relative;
+}
+.section .inner {
+	width: 940px;
+	position: relative;
+	margin: auto;
+}
+.animate {
+	-webkit-transition:1s ease all;
+    -moz-transition:1s ease all;
+}
+.section2 .img1 {
+	position: absolute;
+	right: 14px;
+	top: 130px;
+	-webkit-transform:translateX(300px);
+    -moz-transform:translateX(300px);
+    opacity: 0;
+}
+.section2.inview .img1,
+.section2.inview .img2 {
+	-webkit-transform:translateX(0);
+    -moz-transform:translateX(0);
+    opacity: 1;
+}
+.section2 .img2 {
+	position: absolute;
+	left: -32px;
+	top: 116px;
+	-webkit-transform:translateX(-300px);
+    -moz-transform:translateX(-300px);
+    opacity: 0;
+}
+.section3 .img1 {
+	position: absolute;
+	left: 0;
+	top: 85px;
+}
+.section3 .img2 {
+	position: absolute;
+	left: -34px;
+	top: 45px;
+	-webkit-transform:translate(-300px);
+    -moz-transform:translate(-300px);
+    opacity: 0;
+}
+.section3.inview .img2 {
+	opacity: 1;
+	-webkit-transform:translate(0);
+    -moz-transform:translate(0);
+}
+.section3 .img3 {
+	position: absolute;
+	left: 0;
+	top: 85px;
+	opacity: 0;
+	-webkit-transform:translateY(-300px);
+    -moz-transform:translateY(-300px);
+}
+.section3.inview .img3 {
+	opacity: 1;
+	-webkit-transform:translateY(0);
+    -moz-transform:translateY(0);
+}
+.section3 .img4 {
+	position: absolute;
+	left: 550px;
+	top: 80px;
+}
+.section3 .img5 {
+	position: absolute;
+	left: 410px;
+	top: 170px;
+}
+.section4 .img1 {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 151px;
+	top: 218px;
+	opacity: 0;
+}
+.section4.inview .img1 {
+	opacity: 1;
+}
+.section4 .img2 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	left: 0;
+	top: 60px;
+	opacity: 0;
+	-webkit-transform:translateY(-300px);
+    -moz-transform:translateY(-300px);
+}
+.section4.inview .img2 {
+	opacity: 1;
+	-webkit-transform:translateY(0);
+    -moz-transform:translateY(0);
+}

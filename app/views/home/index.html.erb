@@ -1,0 +1,155 @@
+<body id="home">
+<div id="doc">
+  <div id="hd" class="banner">
+    <div class="inner">
+      <h1 id="logo"><a href="/">DOUND STUDIO</a></h1>
+      <div id="nav">
+        <ul>
+          <li class="item item-1"><a href="work.html">WORK</a></li>
+          <li class="item item-2"><a href="intro.html">IDEA</a></li>
+          <li class="item item-3"><a href="intro.html">INTRODUCTION</a></li>
+          <li class="item item-4"><a href="mailto:xx@xx.com">@</a></li>
+        </ul>
+        <div class="bg"></div>
+      </div>
+    </div>
+    <div id="banner">
+      <div class="img" style="background:url(/assets/bn1.jpg) no-repeat center 0;"></div>
+      <div class="img" style="background:url(/assets/bn2.jpg) no-repeat center 0;"></div>
+      <div class="img" style="background:url(/assets/bg_banner.png) no-repeat center 0;"></div>
+    </div>
+  </div>
+  <div id="bd">
+    <div id="worklist">
+      <div class="work-top">
+        <h2><span>From the visual to the information, we offer a<br />
+            new era of design concepts for products bring sublimation!</span></h2>
+        <div class="list">
+          <ul class="clearfix">
+            <li class="l"><a href="/work2.html"><img src="/assets/ad1.png" alt=""></a></li>
+            <li class="r"><a href="/work2.html"><img src="/assets/ad2.png" alt=""></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="work-list">
+        <div class="list">
+          <div class="item">
+            <a href="" class="img"><img src="/assets/ad3.png" alt=""></a>
+            <div class="info">
+              <h3>Sina Weibo On-line</h3>
+              <span class="time">Today</span>
+              <p>Articles about learning, using and teaching the English language, includingadvicet
+              utorials, opinions and lesson plans fromvarious...</p>
+            </div>
+          </div>
+          <div class="item">
+            <a href="" class="img"><img src="/assets/ad3.png" alt=""></a>
+            <div class="info">
+              <h3>Sina Weibo On-line</h3>
+              <span class="time">September 10, 2013</span>
+              <p>Articles about learning, using and teaching the English language, includingadvicet
+              utorials, opinions and lesson plans fromvarious...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn-more"></a>
+    </div>
+  </div>
+  <div id="ft">
+    <div class="inner">
+      <div class="contact">
+        <h3>Contact</h3>
+        <p class="tel">+ 86 150 1017 2550</p>
+        <p class="mail">Andycooper@softfacade.com</p>
+      </div>
+      <div class="follow">
+        <h3>Follow Round</h3>
+        <ul>
+          <li><a href="" class="ico ico-rss"></a></li>
+          <li><a href="" class="ico ico-t"></a></li>
+          <li><a href="" class="ico ico-f"></a></li>
+          <li><a href="" class="ico ico-weibo"></a></li>
+          <li><a href="" class="ico ico-net"></a></li>
+        </ul>
+      </div>
+      <p class="cprt">© 2013 FOIRDESIGN. All rights reserved. Unauthorized usage of this content prohibited. </p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+function Slide(opinions){
+  /* opinions = {
+container: 'hd',
+item:'.img',
+time:1000
+
+}
+   */
+this.opinions = opinions;
+this.init();
+}
+Slide.prototype = {
+timer: null,
+       index: 0,
+       len: 0,
+       switchTo: function(id){
+         console.log(id);
+         var id = id;
+         var container = this.opinions.container;
+         var itemclass = this.opinions.item;
+         var el = document.getElementById(container);
+         var item = $(itemclass, el);
+         var len = item.length;
+
+         $(el).fadeOut(function(){
+             item.css({'z-index':1});
+             item.eq(id).css({'z-index':2});
+             $(el).fadeIn();
+             });
+       },
+init: function(){
+        var that = this;
+        var container = this.opinions.container;
+        var itemclass = this.opinions.item;
+        var el = document.getElementById(container);
+        var item = $(itemclass, el);
+        var len = item.length;
+        that.len = len;
+
+        if (len < 2) {
+          return;
+        }
+
+        $(el).on('mouseenter', function(){
+            that.stop();
+            }).on('mouseleave', function(){
+              that.play();
+              });
+        that.play();
+      },
+play: function(){
+        var that = this,
+        len = that.len,
+        time = that.opinions.time;
+        that.timer = window.setInterval(function(){
+            that.switchTo(that.index);
+            that.index++;
+            if (that.index > len - 1) {
+            that.index = 0;
+            }
+            }, time);
+      },
+stop: function(){
+        window.clearInterval(this.timer);
+      }
+
+};
+
+var slide = new Slide({
+container: 'banner',
+item: '.img',
+time:5000
+});
+</script>
+</body>

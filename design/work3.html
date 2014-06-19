@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie6 oldie" lang="zh"><![endif]-->
+<!--[if IE 7]><html class="ie7 oldie" lang="zh"><![endif]-->
+<!--[if IE 8]><html class="ie8 oldie" lang="zh"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="zh"> <!--<![endif]-->
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=9" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>dotdesign</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/work1.css">
+<script src="js/jquery-1.8.0.min.js"></script>
+</head>
+<body id="page">
+<div id="doc">
+	<div id="hd">
+		<div class="inner">
+			<h1 id="logo"><a href="/">DOUND STUDIO</a></h1>
+			<div id="nav">
+				<ul>
+					<li class="item item-1 active"><a href="/work.html">WORK</a></li>
+					<li class="item item-2"><a href="/intro.html">IDEA</a></li>
+					<li class="item item-3 active"><a href="/intro.html">INTRODUCTION</a></li>
+					<li class="item item-4"><a href="mailto:xx@xx.com">@</a></li>
+				</ul>
+				<div class="bg"></div>
+			</div>
+		</div>
+	</div>
+	<div id="bd" class="full">
+		<div id="work-detail">
+			<div class="hd clearfix">
+				<h2 class="tit">Ten extinct creatures</h2>
+				<p class="tag">Dynamic / Web / Mobile</p>
+				<p class="desc">Articles about learning, using and teaching the English language, including advice  tuto rials, opinions and lesson plans from various authors andcontributors. Articles cover to pics from lish grammar. </p>
+				<a href="#" class="back"></a>
+			</div>
+			<div class="bd">
+				<div class="section section1">
+					<div class="img1"></div>
+				</div>
+				<div class="section section2">
+					<div class="inner">
+						<div class="img1 animate">
+							<img src="css/img/work1/p1.png">
+						</div>
+						<div class="img2 animate">
+							<img src="css/img/work1/p2.png">
+						</div>
+					</div>
+				</div>
+				<div class="section section3">
+					<div class="inner">
+						<div class="img1 animate">
+							<img src="css/img/work1/p3.png">
+						</div>
+						<div class="img2 animate">
+							<img src="css/img/work1/p4.png">
+						</div>
+						<div class="img3 animate">
+							<img src="css/img/work1/p5.png">
+						</div>
+						<div class="img4 animate">
+							<img src="css/img/work1/p6.png">
+						</div>
+						<div class="img5 animate">
+							<img src="css/img/work1/p7.png">
+						</div>
+					</div>
+				</div>
+				<div class="section section4">
+					<div class="img1 animate" style="background:url(css/img/work1/p8.png) no-repeat center 0">
+					</div>
+					<div class="img2 animate">
+						<img src="css/img/work1/p9.png">
+					</div>
+				</div>
+			</div>
+			<div class="ft">
+				<div class="orther">
+					<div class="list">
+						<ul class="clearfix">
+							<li>
+								<a href="#" class="img"><img src="./css/img/case.png" alt=""></a>
+								<p>Brand VI Vision</p>
+							</li>
+							<li>
+								<a href="#" class="img"><img src="./css/img/case.png" alt=""></a>
+								<p>Brand VI Vision</p>
+							</li>
+							<li>
+								<a href="#" class="img"><img src="./css/img/case.png" alt=""></a>
+								<p>Brand VI Vision</p>
+							</li>
+						</ul>
+					</div>
+					<div class="nav">
+						<a href="#" class="pre"></a>
+						<a href="#" class="next"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="ft">
+		<div class="inner">
+			<div class="contact">
+				<h3>Contact</h3>
+				<p class="tel">+86 13800138000</p>
+				<p class="mail">contact@aaa.com</p>
+			</div>
+			<div class="follow">
+				<h3>Follow Round</h3>
+				<ul>
+					<li><a href="" class="ico ico-rss"></a></li>
+					<li><a href="" class="ico ico-t"></a></li>
+					<li><a href="" class="ico ico-f"></a></li>
+					<li><a href="" class="ico ico-weibo"></a></li>
+					<li><a href="" class="ico ico-net"></a></li>
+				</ul>
+			</div>
+			<p class="cprt">&copy; 2003</p>
+		</div>
+	</div>
+</div>
+<script src="js/jquery.inview.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	var gevent = {};
+
+	$(gevent).on('section2', function(){
+
+	});
+
+	$('.section').one('inview', function (event, visible, x , y) {
+	  var o = $(this);
+	  console.log(visible, event, x, y, this.className);
+	  if (visible == true) {
+	      setTimeout(function(){
+	      	o.addClass('inview');
+	      }, 1000);
+	  }
+	});
+
+});
+</script>
+</body>
+</html>
