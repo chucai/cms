@@ -1,0 +1,11 @@
+"zh-CN":
+  activerecord:
+    models:
+      company: 公司
+    attributes:
+      company:
+        name: 公司名称
+        phone: 公司电话
+        logo: 公司Logo
+        email: 联系邮箱
+        address: 公司地址

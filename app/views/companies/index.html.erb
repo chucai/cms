@@ -1,8 +1,46 @@
-    <td><%= @company.name %></td>
-    <td><%= @company.phone %></td>
-    <td><%= @company.email %></td>
-    <td><%= @company.address %></td>
-    <td><%= @company.logo %></td>
-    <td><%= link_to 'Edit', edit_admin_company_path(@company) %></td>
-
-<%=image_tag @company.logo %>
+<div class="container-fluid">
+  <%= render_notice_message %>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="name">公司名称</label>
+    </div>
+    <div class="col-md-10">
+      <%= @company.name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="name">公司电话</label>
+    </div>
+    <div class="col-md-10">
+      <%= @company.phone %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <label for="name">公司邮箱</label>
+    </div>
+    <div class="col-md-10">
+      <%= @company.email %>
+    </div>
+  </div><div class="row">
+    <div class="col-md-2">
+      <label for="name">公司地址</label>
+    </div>
+    <div class="col-md-10">
+      <%= @company.address %>
+    </div>
+  </div><div class="row">
+    <div class="col-md-2">
+      <label for="name">公司标志</label>
+    </div>
+    <div class="col-md-10">
+      <%=image_tag @company.logo %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="actions col-md-6">
+      <%=link_to '修改', edit_admin_company_path(@company), :class => 'btn btn-primary'  %>
+    </div>
+  </div>
+</div>

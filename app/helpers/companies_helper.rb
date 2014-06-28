@@ -1,5 +1,13 @@
 module CompaniesHelper
 
+  def render_notice_message
+    if notice
+      content_tag "div", :class => 'alert alert-success' do
+        notice
+      end
+    end
+  end
+
   def render_nav_list
     nav_list = {
       "WORK"         => home_work_path,
