@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="x-ua-compatible" content="IE=9" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="shortcut icon" href="<%= asset_path("ad1.png") %>" />
+<%=favicon_link_tag asset_path('ad1.png') %>
 <title><%= @company.name %></title>
 <%= stylesheet_link_tag    "application", :media => "all" %>
 <%= csrf_meta_tags %>

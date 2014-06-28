@@ -1,4 +1,6 @@
 "zh-CN":
+  company:
+    admin: 公司管理
   activerecord:
     models:
       company: 公司

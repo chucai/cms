@@ -1,43 +1,16 @@
 <div class="container-fluid">
   <%= render_notice_message %>
-  <div class="row">
+  <% Company.serialize_columns.each do |column| %>
+    <div class="row">
     <div class="col-md-2">
-      <label for="name">公司名称</label>
+      <label for="name"><%=@company.t(column) %></label>
     </div>
     <div class="col-md-10">
-      <%= @company.name %>
+      <%= @company.send("#{column.to_s}_viewer") %>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label for="name">公司电话</label>
-    </div>
-    <div class="col-md-10">
-      <%= @company.phone %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label for="name">公司邮箱</label>
-    </div>
-    <div class="col-md-10">
-      <%= @company.email %>
-    </div>
-  </div><div class="row">
-    <div class="col-md-2">
-      <label for="name">公司地址</label>
-    </div>
-    <div class="col-md-10">
-      <%= @company.address %>
-    </div>
-  </div><div class="row">
-    <div class="col-md-2">
-      <label for="name">公司标志</label>
-    </div>
-    <div class="col-md-10">
-      <%=image_tag @company.logo %>
-    </div>
-  </div>
+  <% end -%>
+
   <div class="row">
     <div class="actions col-md-6">
       <%=link_to '修改', edit_admin_company_path(@company), :class => 'btn btn-primary'  %>
