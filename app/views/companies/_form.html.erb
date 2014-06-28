@@ -1,8 +1,7 @@
-<%= form_for([:admin, @company]) do |f| %>
+<%= form_for([:admin, @company], :html=>{:multipart=>true}) do |f| %>
   <% if @company.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
-
       <ul>
       <% @company.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -29,7 +28,7 @@
   </div>
   <div class="field">
     <%= f.label :logo %><br />
-    <%= f.text_field :logo %>
+    <%= f.file_field :logo %>
   </div>
   <div class="actions">
     <%= f.submit %>

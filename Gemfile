@@ -9,7 +9,11 @@ gem 'rails', '3.2.17'
 gem 'sqlite3'
 
 gem 'bootstrap-sass', '3.1.1'
+gem 'carrierwave', '0.10.0'
 
+group :development do 
+  gem 'pry', '0.9.12.6'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.

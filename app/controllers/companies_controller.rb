@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   layout 'admin'
+  before_filter :init_company, :only => [:index]
 
   def index
     @companies = Company.all
@@ -55,11 +56,9 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.update_attributes(params[:company])
-        format.html { redirect_to @company, notice: 'Company was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to admin_companies_path, notice: 'Company was successfully updated.' }
       else
         format.html { render action: "edit" }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,5 +73,10 @@ class CompaniesController < ApplicationController
       format.html { redirect_to admin_companies_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+  def init_company
+    @company = Company.first
   end
 end

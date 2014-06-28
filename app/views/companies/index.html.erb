@@ -1,31 +1,8 @@
-<h1>Listing companies</h1>
+    <td><%= @company.name %></td>
+    <td><%= @company.phone %></td>
+    <td><%= @company.email %></td>
+    <td><%= @company.address %></td>
+    <td><%= @company.logo %></td>
+    <td><%= link_to 'Edit', edit_admin_company_path(@company) %></td>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Address</th>
-    <th>Logo</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @companies.each do |company| %>
-  <tr>
-    <td><%= company.name %></td>
-    <td><%= company.phone %></td>
-    <td><%= company.email %></td>
-    <td><%= company.address %></td>
-    <td><%= company.logo %></td>
-    <td><%= link_to 'Show', [:admin, company] %></td>
-    <td><%= link_to 'Edit', edit_admin_company_path(company) %></td>
-    <td><%= link_to 'Destroy', [:admin, company], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Company', new_admin_company_path %>
+<%=image_tag @company.logo %>
