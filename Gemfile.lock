@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/jasl/ueditor_rails.git
+  revision: 121d466799be7625475827256c0da8701757d880
+  specs:
+    ueditor_rails (0.0.4)
+      jquery-rails
+      rails (~> 3.2.1)
+
 GEM
   remote: http://ruby.taobao.org/
   specs:
@@ -120,6 +128,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (= 3.1.1)
   carrierwave (= 0.10.0)
+  coderay
   coffee-rails (~> 3.2.1)
   jquery-rails
   pry (= 0.9.12.6)
@@ -127,4 +136,5 @@ DEPENDENCIES
   rails (= 3.2.17)
   sass-rails (~> 3.2.3)
   sqlite3
+  ueditor_rails!
   uglifier (>= 1.0.3)

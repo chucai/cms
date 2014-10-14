@@ -1,0 +1,17 @@
+<%= form_tag templates_path, :class => 'col-md-10' do %>
+  <div class="form-group">
+    <label for="name">模板名称</label>
+    <%=text_field_tag 'name', '', :class => 'form-control' %>
+    <span class="help-inline">名字必须是下划线开始，并且只能是英文字母. 如 _header.html.erb </span>
+  </div>
+
+  <div class="form-group">
+    <label for="context">模板内容</label>
+    <%= ueditor_text_tag 'context', '', :class => 'form-control', :cols => 30, :rows => 10 %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Submit', :class => 'btn btn-primary' %>
+  </div>
+
+<% end -%>

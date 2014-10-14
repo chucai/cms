@@ -1,0 +1,22 @@
+<h3>模板管理</h3>
+
+<%=link_to '创建模板', new_template_path, :class => 'btn btn-primary pull-right' %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @templates.each do |template| %>
+  <tr>
+    <td><%= template.name %></td>
+    <td>
+      <a href="/admin/templates?name=<%=template.name %>" class='btn btn-default'>Show</a>
+      <%=link_to 'Edit', edit_template_path(template), :class => 'btn btn-default'  %>
+    </td>
+  </tr>
+<% end -%>
+  </tbody>
+</table>

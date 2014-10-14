@@ -1,0 +1,23 @@
+<div id="notice"><%= notice %></div>
+
+<% Snippet.serialize_columns.each do |column| %>
+  <div class='row'>
+  <div class="col-md-2">
+    <label for="name"><%=Snippet.t(column) %></label>
+  </div>
+  <div class="col-md-10">
+    <% if column.to_s == 'context' %>
+      <code>
+      <%= @snippet.send("#{column.to_s}_viewer") %>
+    </code>
+  <% else %>
+      <%= @snippet.send("#{column.to_s}_viewer") %>
+  <% end -%>
+  </div>
+</div>
+<% end -%>
+<% if @snippet.stype != 'system' %>
+  <%= link_to 'Edit', edit_snippet_path(@snippet), :class => 'btn btn-default' %> |
+<% end %>
+
+<%= link_to 'Back', snippets_path, :class => 'btn btn-default' %>

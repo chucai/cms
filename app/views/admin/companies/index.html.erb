@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <%= render_notice_message %>
+  <% Company.serialize_columns.each do |column| %>
+    <div class="row">
+    <div class="col-md-2">
+      <label for="name"><%=@company.t(column) %></label>
+    </div>
+    <div class="col-md-10">
+      <%= @company.send("#{column.to_s}_viewer") %>
+    </div>
+  </div>
+  <% end -%>
+
+  <div class="row">
+    <div class="actions col-md-6">
+      <%=link_to '修改', edit_admin_company_path(@company), :class => 'btn btn-primary'  %>
+    </div>
+  </div>
+</div>

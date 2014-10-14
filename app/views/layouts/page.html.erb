@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie6 oldie" lang="zh"><![endif]-->
+<!--[if IE 7]><html class="ie7 oldie" lang="zh"><![endif]-->
+<!--[if IE 8]><html class="ie8 oldie" lang="zh"><![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+<meta http-equiv="x-ua-compatible" content="IE=9" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<%=favicon_link_tag asset_path('ad1.png') %>
+<title><%= @company.name %></title>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= csrf_meta_tags %>
+</head>
+<body id="page">
+<div id="doc">
+  <div id="hd">
+    <%=render 'layouts/nav' %>
+  </div>
+  <%= yield %> 
+  <%=render "templates/partials/footer" %> 
+</div>
+<%= javascript_include_tag "application" %>
+</body>
+</html>

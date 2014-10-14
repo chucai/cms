@@ -1,0 +1,30 @@
+<h3>页码管理</h3>
+
+<%=link_to '新建页面', new_admin_page_path, :class => 'pull-right btn btn-primary' %>
+
+<table class='table'>
+  <thead>
+  <th>标题</th>
+  <th>描述</th>
+  <th>地址</th>
+  <th></th>
+  <th></th>
+</thead>
+
+<tbody>
+<% @pages.each do |page| %>
+<tr>
+  <td><%=page.title %></td>
+  <td><%=page.description %></td>
+  <td><%=page.path %></td>
+  <td>
+    <%=link_to '修改', edit_admin_page_path(page), :class => 'btn btn-primary' %> 
+  </td>
+  <td>
+    <%= link_to 'Destroy', [:admin, page], method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+  </td>
+</tr>
+<% end -%>
+</tbody>
+
+</table>

@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  parent_page_id: nil 
+  company_id: 1
+  title: MyString
+  description: MyString
+  style_id: 1
+
+two:
+  id: 2
+  parent_page_id: 1
+  company_id: 1
+  title: MyString
+  description: MyString
+  style_id: 1
+
+three:
+  id: 3
+  parent_page_id: 1
+  company_id: 1
+  title: MyString
+  description: MyString
+  style_id: 1

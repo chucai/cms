@@ -1,5 +1,4 @@
 class HomeController < ApplicationController
-  before_filter :init_objects
 
   def index
   end
@@ -16,8 +15,4 @@ class HomeController < ApplicationController
     render "work1"
   end
 
-  private
-  def init_objects
-    @company = Company.first
-  end
 end

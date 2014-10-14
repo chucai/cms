@@ -1,0 +1,21 @@
+<%= form_for([:admin, @page], :html => { :multipart => true }) do |f|  %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => 'form-control', :placeholder => '页面名称'  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :path %>
+    <%= f.text_field :path, :class => 'form-control', :placeholder => '页面地址, 比如填写work, 会对应与/pages/work页面'  %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class => 'form-control', :rows => 3 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.ueditor_text :content, :class => 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit I18n.t('actions.submit'), :class => 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,10 +1,30 @@
 "zh-CN":
+  actions:
+    submit: 提交
+    cancel: 取消
+  admin:
+    page: 页面管理
   company:
     admin: 公司管理
   activerecord:
     models:
       company: 公司
+      page: 页面
+      u_image: 图片
     attributes:
+      snippet:
+        name: 名字
+        description: 描述
+        context: 内容
+        stype: 类型
+      u_image:
+        upfile: 图片文件
+        title: 图片标题
+      page:
+        title: 页面标题
+        path: 页面地址
+        description: 页面描述
+        content: 页面内容
       company:
         name: 公司名称
         phone: 公司电话

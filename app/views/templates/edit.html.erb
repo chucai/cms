@@ -1,0 +1,18 @@
+<%= form_tag template_path(@template), :method => 'PUT', :class => 'col-md-10' do %>
+  <div class="form-group">
+    <label for="name">模板名称</label>
+    <%=text_field_tag 'name', '', :class => 'form-control', :value => @template.name, :disabled => true %>
+  </div>
+
+  <div class="form-group">
+    <label for="context">模板内容</label>
+    <code>
+    <%=text_area_tag 'context', @template.context, :class => 'form-control', :cols => 30, :rows => 10 %>
+    <code>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Submit', :class => 'btn btn-primary' %>
+  </div>
+
+<% end -%>

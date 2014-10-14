@@ -1,6 +1,5 @@
-class CompaniesController < ApplicationController
+class CompaniesController < AdminController
   layout 'admin'
-  before_filter :init_company, :only => [:index]
 
   def index
     @companies = Company.all
@@ -75,8 +74,4 @@ class CompaniesController < ApplicationController
     end
   end
 
-  private
-  def init_company
-    @company = Company.first
-  end
 end

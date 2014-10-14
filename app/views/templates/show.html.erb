@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-2">
+    <label>
+      模板名称
+    </label>
+  </div>
+  <div class="col-md-10">
+    <%=@template.name %> 
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <label>模板内容</label>
+  </div>
+  <div class="col-md-10 col-md-offset-2" style="word-wrap: break-word;word-break: normal;">
+    <code>
+    <%=@template.format_context %>
+    </code>
+  </div>
+</div>
+
+<%=link_to 'Edit', edit_template_path(@template), :class => 'btn btn-primary' %>

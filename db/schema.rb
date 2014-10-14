@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140619161553) do
+ActiveRecord::Schema.define(:version => 20140825002750) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,43 @@ ActiveRecord::Schema.define(:version => 20140619161553) do
     t.string   "logo"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "navigations", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "pages", :force => true do |t|
+    t.integer  "parent_page_id"
+    t.string   "title"
+    t.string   "description"
+    t.integer  "style_id",       :default => 1
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "company_id"
+    t.string   "url"
+    t.text     "content",        :default => ""
+    t.string   "path",           :default => ""
+  end
+
+  create_table "snippets", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.text     "context"
+    t.string   "stype"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "u_images", :force => true do |t|
+    t.string   "upfile"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "title",      :default => ""
   end
 
 end

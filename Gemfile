@@ -11,9 +11,13 @@ gem 'sqlite3'
 gem 'bootstrap-sass', '3.1.1'
 gem 'carrierwave', '0.10.0'
 
+gem 'ueditor_rails', :git => 'https://github.com/jasl/ueditor_rails.git'
+
 group :development do 
   gem 'pry', '0.9.12.6'
 end
+
+gem 'coderay'
 
 # Gems used only for assets and not required
 # in production environments by default.
