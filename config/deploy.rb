@@ -2,7 +2,7 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 # require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
-# require 'mina/rvm'    # for rvm support. (http://rvm.io)
+require 'mina/rvm'    # for rvm support. (http://rvm.io)
 
 # Basic settings:
 #   domain       - The hostname to SSH to.
@@ -10,17 +10,18 @@ require 'mina/git'
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, 'designdot.cn'
-set :deploy_to, 'designdot.cn'
-set :repository, 'git://...'
+set :domain, '182.92.168.174'
+set :deploy_to, '/var/www/designdot'
+set :repository, 'https://github.com/chucai/cms.git'
 set :branch, 'master'
+set :rvm_path, '/usr/local/rvm/bin/rvm'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
 set :shared_paths, ['config/database.yml', 'log']
 
 # Optional settings:
-#   set :user, 'foobar'    # Username in the server to SSH to.
+set :user, 'root'    # Username in the server to SSH to.
 #   set :port, '30000'     # SSH port number.
 
 # This task is the environment that is loaded for most commands, such as
@@ -32,6 +33,7 @@ task :environment do
 
   # For those using RVM, use this to load an RVM version@gemset.
   # invoke :'rvm:use[ruby-1.9.3-p125@default]'
+  invoke :'rvm:use[2.1.3]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.
@@ -56,8 +58,8 @@ task :deploy => :environment do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
-    invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
+    # invoke :'rails:db_migrate'
+    # invoke :'rails:assets_precompile'
 
     to :launch do
       queue "touch #{deploy_to}/tmp/restart.txt"
