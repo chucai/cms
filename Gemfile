@@ -45,6 +45,7 @@ gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
+gem 'mina'
 
 # To use debugger
 # gem 'debugger'
